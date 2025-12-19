@@ -1,0 +1,280 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="gl">
+	<head>
+		
+
+
+
+<title>Identifíquese</title>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<meta name="robots" content="index, nofollow" />
+<meta name="title" content="CAS: Sistema de autenticación" />
+<meta name="description" content="Sistema de autenticación da Consellería de Educación, Ciencia, Universidades e Formación Profesional, Xunta de Galicia" />
+<meta name="author" content="Consellería de Educación, Ciencia, Universidades e Formación Profesional, Xunta de Galicia" />
+
+<link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
+<link rel="icon" href="resources/favicon.ico" type="image/x-icon">	
+<link rel="stylesheet" href="resources/maqint.css" type="text/css" media="all" />
+<link rel="stylesheet" href="resources/cas-educacion.css" type="text/css" media="all" />		
+<script charset="UTF-8" src="https://recursosweb.edu.xunta.gal/recursosweb/scripts/jquery-2.2.4/jquery.min.js" type="text/javascript"></script>
+	    	
+	</head>
+	<body>
+		
+
+
+
+
+<div id="page-loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+<div id="main-wrapper">
+
+
+			
+
+
+
+
+
+
+
+<div id="main-content" class="row">
+	<section id="login-page" class="page no-header no-footer">
+		<div class="login-bg"></div>
+			<div class="page-content">
+				<div class="container">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-xs-12 col-md-6 login-left">
+									<div class="row">
+										<div class="col-xs-12 text-center login-logo">
+
+											<img src="resources/edu-logo-medium.png" alt='Sistema de autenticación da Consellería de Educación, Ciencia, Universidades e Formación Profesional'>
+
+</div>
+			
+
+
+
+
+
+
+
+
+
+		
+		<h1 class="sr-only">Consellería de Educación, Ciencia, Universidades e Formación Profesional</h1>
+		<div class="col-xs-12 login-form">
+			<h2 title="3.4.8"><span>Identifíquese</span></h2>
+			<form id="fm1" action="/cas/login" method="post">
+
+				
+				
+				
+				
+				<div class="form-group">
+					<label for="acceso" class="sr-only">Modo de acceso</label>
+					<select id="acceso" name="acceso" 
+							aria-label='Modo de acceso'
+							class="form-control chosen-select" tabindex="3">
+						<option value="EduLDAP" >Usuario de educación</option>
+					</select>
+ 				</div>
+							
+				<div class="form-group">
+					<label for="username" class="sr-only">Conta de usuario</label>
+					<input type="text" class="form-control" 
+						aria-label='Conta de usuario'
+						tabindex="1" maxlength="40" 
+						id="username" name="username" />
+				</div>
+				
+				<div class="form-group">
+					<label for="password" class="sr-only">Contrasinal</label>
+					<input type="password" class="form-control"
+						aria-label='Contrasinal'
+						maxlength="0" tabindex="2" 
+						id="password" name="password"/>
+				</div>
+				
+				<input type="hidden" name="lt" value="_c9285EC09-AD3F-D1AD-FF39-114DD875ED1E_k17ADC8A9-EA48-757E-2717-4A2ED169F2EB" />
+				<input type="hidden" name="_eventId" value="submit"/>
+				
+				<button type="submit" id="botonentrarlogin" class="btn btn-primary" data-toggle="tooltip"	title="Acceso con usuario e contrasinal" >
+					<span>Entrar</span>
+					<span class="sr-only">Entrar</span>
+				</button>
+			</form>
+		</div>
+		
+		<div class="col-xs-12">
+			<h2>
+				<span>Ou entre con certificado dixital</span>
+			</h2>
+			<form>
+				<div>
+					<a href="#"
+							class="btn btn-primary"
+							title="Autenticación mediante certificado dixital">
+						Entrar			
+					</a>
+
+				</div>
+			</form>
+		</div>
+		
+		<div class="modal fade conta-nonPermitida-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel1">Conta non admitida</h4>
+					</div>
+					<div class="modal-body">
+					<p>Está tratando de acceder cunha conta de <em>#compania#</em> no sistema de autenticación da Consellería de Educación, Ciencia, Universidades e Formación Profesional.</p><p>Debe empregar unha conta da Consellería de Educación, Ciencia, Universidades e Formación Profesional (@edu.xunta.gal) ou ben unha conta da Xunta de Galicia (@xunta.gal)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade acceso-seleccion-erronea-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel1">Aviso sobre selección de conta</h4>
+					</div>
+					<div class="modal-body">
+					<p>Está a introducir unha conta @<em>#orixe#</em> pero ten seleccionada unha de tipo <em>#seleccion#</em>.</p><p>Debe empregar unha conta <em>#destino#</em> ou ben elixir unha de tipo <em>#proposta#</em></p>. 
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			
+
+
+		<div class="login-toolbar text-center col-xs-12">
+			<a href="#"
+					title='Como contacta ca Consellería'>
+				<i class="glyphicon glyphicon-envelope" aria-label="Contacto" data-toggle="tooltip" title="Contacto"><span class="sr-only">Contacto</span></i>Contacto
+			</a>
+			<a href="#"
+					title='Axuda'>
+				<i class="glyphicon glyphicon-question-sign" aria-label="Axuda" data-toggle="tooltip" title="Axuda"><span class="sr-only">Axuda</span></i>Axuda
+			</a>
+		</div>
+	</div>
+</div>
+		
+<div class="hidden-xs hidden-sm col-md-6 col-sm-8 login-right">
+	<div class="col-xs-12 text-center login-right-content">
+		<img src="resources/book-login.png" alt="alt.simbolo.maqueta.interna">
+	</div>
+
+	<div class="xunta-disclaimer">
+		<div class="xunta-logo">
+			<a href="#">
+				<span class="sr-only">Ir á páxina da Consellería de Educación, Ciencia, Universidades e Formación Profesional</span>
+				<img src="resources/cons_cultura_eou-cor-neg.png" class="img-responsive" alt="Logotipo Xunta de Galicia">
+			</a>
+		</div>
+		<div class="xunta-disclaimer-text">
+			<p><span>Servizo prestado pola Consellería de Educación, Ciencia, Universidades e Formación Profesional</span><br> <span>Xunta de Galicia</span></p>
+		</div>
+	</div>
+</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			 </div>
+		 </div>
+	</section>
+</div>
+		
+
+
+<script src="resources/maqint.js"></script>
+
+<script src="resources/bowser.min.js"></script>
+<script src="resources/support.js"></script>
+
+<script src="resources/main.js"></script>
+<script src="resources/login.js"></script>
+
+
+
+
+
+
+
+
+
+
+ <script type="text/javascript">
+//<![CDATA[
+	
+/*
+ * Establece valores para os placeholder (HTML5) dos campos de conta de 
+ * usuario e contrasinal en función do tipo de autenticación empregada
+ */
+function setPlaceHolder(opcionElixida) {
+	switch(opcionElixida) {
+	case "EduLDAP":
+	  	$( "#username" ).attr("placeholder", "Conta de usuario (sen @edu.xunta.gal)");
+	  	$( "#password" ).attr("placeholder", "Contrasinal");
+	  	break;
+
+  	default:
+      	$( "#username" ).attr("placeholder", "");
+  		$( "#password" ).attr("placeholder", "");
+	}	
+};
+
+/* Activación jQuery Chosen para selección o tipo de autenticación */
+$( document).ready(function() {
+    $("#acceso").chosen({
+        disable_search_threshold: 5,
+        width: "100%"
+      }).change(function() {
+		setPlaceHolder($( this ).val());
+	});
+});
+
+/* Fixar o foco no input da conta de usuario */
+$( document).ready(function() {
+	setTimeout(function(){
+	    $( "#username" ).focus();
+	}, 1000
+	);
+});
+
+
+	/* establecer valor por defecto para*/
+	$( "#acceso" ).val("EduLDAP");
+	$( "#acceso" ).trigger("chosen:updated");
+
+setPlaceHolder($( "#acceso" ).val());
+  
+//]]>
+</script>
+
+	</body>
+</html>
